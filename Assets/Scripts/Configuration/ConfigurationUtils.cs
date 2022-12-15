@@ -107,6 +107,16 @@ public static class ConfigurationUtils
         get { return configurationData.SpeedupMultiplier; }
     }
 
+    public static float BlockSpawnChance
+    {
+        get { return configurationData.BlockSpawnChance; }
+    }
+
+    public static int BlockRowsToBuild
+    {
+        get { return configurationData.BlockRowsToBuild; }
+    }
+
 
     private static ConfigurationData configurationData;
 

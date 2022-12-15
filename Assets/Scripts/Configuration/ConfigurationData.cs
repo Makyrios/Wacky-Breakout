@@ -33,6 +33,8 @@ public class ConfigurationData
     float freezerDuration = 2;
     float speedupDuration = 5;
     int speedupMultiplier = 2;
+    float blockSpawnChance = 0.75f;
+    int blockRowsToBuild = 3;
 
     #endregion
 
@@ -167,6 +169,16 @@ public class ConfigurationData
         get { return speedupMultiplier; }
     }
 
+    public float BlockSpawnChance
+    {
+        get { return blockSpawnChance; }
+    }
+
+    public int BlockRowsToBuild
+    {
+        get { return blockRowsToBuild; }
+    }
+
     #endregion
 
     #region Constructor
@@ -223,10 +235,12 @@ public class ConfigurationData
             freezerDuration = float.Parse(values[16]);
             speedupDuration = float.Parse(values[17]);
             speedupMultiplier = int.Parse(values[18]);
+            blockSpawnChance = float.Parse(values[19]) / 100f;
+            blockRowsToBuild = int.Parse(values[20]);
         }
         catch (Exception e)
         {
-
+            Debug.Log("Could not open file " + e);
         }
         finally
         {

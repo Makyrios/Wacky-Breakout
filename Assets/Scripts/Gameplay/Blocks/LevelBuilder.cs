@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -18,16 +17,9 @@ public class LevelBuilder : MonoBehaviour
     GameObject bonusLongBlockPrefab;
     [SerializeField]
     GameObject effectBlockPrefab;
-
-    //[SerializeField]
-    //Texture2D blockSpriteSet;
-    //Sprite[] blockSprites;
-
     [SerializeField]
     SpriteAtlas blockSpriteAtlas;
 
-    [SerializeField, DefaultValue(3)]
-    public int RowsToBuild;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +27,7 @@ public class LevelBuilder : MonoBehaviour
         paddleSpawnLocation = new Vector2(0, -4f);
         Instantiate(paddlePrefab, paddleSpawnLocation, Quaternion.identity);
 
-        //blockSprites = Resources.LoadAll<Sprite>(blockSpriteSet.name);
-
-        SpawnBlocks(1);
+        SpawnBlocks(ConfigurationUtils.BlockRowsToBuild);
     }
 
     /// <summary>
@@ -65,9 +55,15 @@ public class LevelBuilder : MonoBehaviour
                     if (lastBlock)
                         lastBlock = false;
 
-                    Vector2 spawnLocation = new Vector2(j + blockToSpawnCollider.size.x / 2, i);
-                    Instantiate(blockToSpawn, spawnLocation, Quaternion.identity);
-                    print($"Block spawned at x: {spawnLocation.x}, y: {spawnLocation.y}");
+                    float randomBlockSpawn = Random.value;
+
+                    if (randomBlockSpawn < ConfigurationUtils.BlockSpawnChance)
+                    {
+                        Vector2 spawnLocation = new Vector2(j + blockToSpawnCollider.size.x / 2, i);
+                        Instantiate(blockToSpawn, spawnLocation, Quaternion.identity);
+                        print($"Block spawned at x: {spawnLocation.x}, y: {spawnLocation.y}");
+                    }
+
                 }
 
                 // If we can't insert block

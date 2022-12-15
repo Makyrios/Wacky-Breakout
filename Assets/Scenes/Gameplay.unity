@@ -298,7 +298,7 @@ MonoBehaviour:
   bonusLongBlockPrefab: {fileID: 4086369642138252142, guid: fae1d57930382a447b375fb3821f448b, type: 3}
   effectBlockPrefab: {fileID: 8757198180396090979, guid: 632d9d61ba77db74cb0596d0c9e251ae, type: 3}
   blockSpriteAtlas: {fileID: 4343727234628468602, guid: 23e6b8e0e9bb628499dea7fe223d6eeb, type: 2}
-  RowsToBuild: 1
+  RowsToBuild: 3
 --- !u!114 &519420039
 MonoBehaviour:
   m_ObjectHideFlags: 0
