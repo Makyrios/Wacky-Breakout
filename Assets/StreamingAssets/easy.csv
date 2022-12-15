@@ -1,0 +1,2 @@
+PaddleMoveUnitsPerSecond,BallMaxSpeed,BallImpulseForce,TopBlockSpawnLocation,BottomBlockSpawnLocation,MinBallSpawnTime,MaxBallSpawnTime,BallsPerGame,StandardBlockWorth,LongBlockWorth,BonusBlockWorth,EffectBlockWorth,StandardBlockSpawnChance,LongBlockSpawnChance,BonusBlockSpawnChance,EffectBlockSpawnChance,FreezerDuration,SpeedupDuration,SpeedupMultiplier
+7,4,200,4,2,5,10,15,2,1,3,4,70,20,5,5,2,7,2
